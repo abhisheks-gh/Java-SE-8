@@ -1,4 +1,12 @@
-# Java SE 8
+# Java SE 8 - Long Term Support (LTS)
+The current LTS versions of Java are Java 7, Java 8, Java 11,
+and soon, Java 17. Java 11 and Java 17
+
+*A Java LTS (long-term support) release is a version of Java
+that will remain the industry standard for several years. To
+give you an example of this, Java 8 was released in 2014, it
+will continue to receive updates until 2020, and extended 
+support will end by 2025.*
 
 ## Why Java is "Robust" ?
 When we write code, we are going to go through many
