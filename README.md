@@ -115,3 +115,7 @@ language that is interpreted by the JVM.
 * Bytecode is **not** machine code that gets executed directly.
 * Instead, the JVM translates (i.e., interprets) the bytecode into machine code,
 which gets run by the actual platform.
+* In other words, bytecode is like the "machine code" for the JVM.
+    * The bytecode is platform independent and can therefore be interpreted
+       by any JVM.
+    * JVMs are built specific to particular platforms (hardware and OS).
