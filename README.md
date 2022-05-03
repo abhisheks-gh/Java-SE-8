@@ -32,7 +32,7 @@ test potentially malicious software.
 used by Java & so on.
 
 ## Why Java is "Architecturally neutral" & "Portable" ?
-This is also known as platform independent. Java popularise the term
+This is also known as platform independence. Java popularise the term
 **"WRITE ONCE RUN ANYWHERE"**. So, the idea is that we can write
 a program on Windows & we can run it on UNIX or on MAC PC & 
 we can use the same code that we wrote for both. The way that 
