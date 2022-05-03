@@ -51,13 +51,13 @@ it gets compiled into something that java platform understands
 Java platforms includes an interpreter & so it's going to interpret
 the bytecode that we write.
 
-**Byte Code:**: The code that is going to run through the Java
+**Byte Code:** The code that is going to run through the Java
 compiler. 
 
 So, that byte code is going to be interpreted.
 
 It's threaded that helps it to achieve high performance & it's
-dynamic meaning that it can resolve at the runtime how things 
+dynamic means that it can resolve at the runtime how things 
 should be linked together. 
 
 *In other words, lets say we are writing some code that's going
