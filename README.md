@@ -104,3 +104,14 @@ already on the client's computer which has the Java platform.
             JAVA VIRTUAL MACHINE
             HARDWARE / OS
 
+## Java Runtime Environment (JRE)
+Java API and Java Virtual Machine (JVM) together makes JRE.
+
+## The Java Platform Cont.
+In Java, applications are both compiled and interpreted.
+* The Java compiler compiles our application source code to an intermediate
+language that is interpreted by the JVM.
+* The intermediate language is called bytecode.
+* Bytecode is **not** machine code that gets executed directly.
+* Instead, the JVM translates (i.e., interprets) the bytecode into machine code,
+which gets run by the actual platform.
