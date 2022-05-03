@@ -56,7 +56,7 @@ compiler.
 
 So, that byte code is going to be interpreted.
 
-It's threaded that helps it to achieve high performance & it's
+It's threaded that helps it to achieve high performance & it is
 dynamic means that it can resolve at the runtime how things 
 should be linked together. 
 
@@ -67,3 +67,40 @@ more dynamic.*
 
 **Resources (Features of Java):**  
 https://www.oracle.com/java/technologies/introduction-to-java.html 
+
+## The Java Platform
+Java platform has two different components:
+* ***The Java Virtual Machine (JVM)*** - What's actually going to run
+our program. JVM is coded in such a way that it's going to interpret
+our source code for the underlying operating system.
+The JVM for different architectures are different.
+***For example, JVM in a MAC operating system and a Windows 
+64-bit system are going to be different.*** In this way it helps us
+to achieve platform independence.
+
+
+* ***The Java Application Programming Interface (API)*** -
+We can think of API as code written by someone else that we
+get to use. It's just bunch of libraries of code.
+
+
+*NOTE: Another thing that is interesting about Java platform
+is that it can be used to run languages that are Java.
+So, if you have ever heard of programming languages like **Groovy,
+Scala, Clojure, etc.** These are programming languages that
+are Java but have been return for the Java platform.
+
+So at higher level, this is how we are going to interact with the
+Java platform. First, we are going to write a Java 
+application, which is in part going to use the Java API. The
+great thing about the Java API is that it not only uses the
+code that we did right, but the Java API is already bundled with
+the Java platform. If we are using a ton of code from the Java 
+API, we don't have to bundle it with our own application. It's
+already on the client's computer which has the Java platform.
+        
+            Our JAVA APPLICATION
+            JAVA API
+            JAVA VIRTUAL MACHINE
+            HARDWARE / OS
+
