@@ -45,7 +45,7 @@ operating system.
 
 But, with Java we don't have to do that, we write our code once,
 it gets compiled into something that java platform understands
-(Java Unicode) & that way it achieves platform independence. 
+(Java bytecode) & that way it achieves platform independence. 
 
 ## Why Java is "interpreted", "threaded" & "dynamic" ?
 Java platforms includes an interpreter & so it's going to interpret
