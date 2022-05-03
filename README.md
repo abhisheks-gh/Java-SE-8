@@ -37,7 +37,7 @@ This is also known as platform independence. Java popularise the term
 a program on Windows & we can run it on UNIX or on MAC PC & 
 we can use the same code that we wrote for both. The way that 
 they are able to achieve platform independence is that we never
-compiles our programs into a machine code that's made up for a
+compile our programs into a machine code that's made up for a
 specific architecture. Let's say we want to create an .exe file
 for windows in other programming languages, we'll write the code
 then we'll compile it for that underline architecture or the underline
