@@ -127,3 +127,14 @@ which gets run by the actual platform.
     * The bytecode is platform independent and can therefore be interpreted
        by any JVM.
     * JVMs are built specific to particular platforms (hardware and OS).
+    
+
+## Rules for main method are:
+A) It must be public and static (in any order, as long as it is to the
+left of the return type). <br>
+B) It must return "void." <br>
+C) The name "main" must be written in all lowercase. <br>
+D) It must declare a String array parameter (where the square brackets may
+be written to the right of String or to the right of the identifier). <br>
+E) The identifier for the String array may be named anything we'd like
+(though, by convention, it is typically "args"). <br>
