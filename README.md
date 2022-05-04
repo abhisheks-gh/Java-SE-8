@@ -129,7 +129,7 @@ which gets run by the actual platform.
     * JVMs are built specific to particular platforms (hardware and OS).
     
 
-## Rules for main method are:
+## Rules for main method are
 A) It must be public and static (in any order, as long as it is to the
 left of the return type). <br>
 B) It must return "void." <br>
@@ -138,3 +138,22 @@ D) It must declare a String array parameter (where the square brackets may
 be written to the right of String or to the right of the identifier). <br>
 E) The identifier for the String array may be named anything we'd like
 (though, by convention, it is typically "args"). <br>
+
+## Objects vs. Primitives
+* Primitives behave differently in that they don't have data
+& procedures (state & behaviour).
+
+## Creating (Instantiating) object
+* The following code creates three different types of Java objects: <br>
+        
+      String s = new String();
+      Customer c = new Customer();
+      Circle circle = new Circle();
+
+Lets consider <br>
+            
+        Customer c = new Customer(); 
+// Customer = Reference Type <br>
+// c = Reference Variable <br>
+// new = "new" Keyword <br>
+// Customer() = Object Type <br>
