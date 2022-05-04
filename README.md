@@ -140,8 +140,8 @@ E) The identifier for the String array may be named anything we'd like
 (though, by convention, it is typically "args"). <br>
 
 ## Objects vs. Primitives
-* Primitives behave differently in that they don't have data
-& procedures (state & behaviour).
+* Primitives behave differently in that they don't have procedures (behaviour). <br>
+*  Primitives only have state (no methods), and they are limited to one piece of state (data).
 
 ## Creating (Instantiating) object
 * The following code creates three different types of Java objects: <br>
@@ -157,3 +157,24 @@ Lets consider <br>
 // c = Reference Variable <br>
 // new = "new" Keyword <br>
 // Customer() = Object Type <br>
+
+* The technical term for creating an object is
+***instantiation***. <br>
+* Another important note about creating objects is to 
+understand when the object is actually created.
+    * When a reference is defined, this does **not** create
+    the object.
+    * Defining a reference only means that it is ready to point
+    to an object.
+    * The object is created when "new" is used.
+  
+          Circle c;           // No object exists yet
+          c = new Circle();   // Object created and assigned to 'c'
+    * Single reference can be reused over & over again. <br>
+               
+            Customer c = new Customer("CID10394");   // Same reference - different objects
+            Customer c = new Customer("CID23511");
+            Customer c = new Customer("CID39203");
+            Customer c = new Customer("CID88374");
+        * Depending on other code in our application, the old object that our 
+        reference was pointing to may be destroyed.
