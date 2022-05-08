@@ -143,6 +143,14 @@ E) The identifier for the String array may be named anything we'd like
 * Primitives behave differently in that they don't have procedures (behaviour). <br>
 *  Primitives only have state (no methods), and they are limited to one piece of state (data).
 
+## Primitive types in Java
+Java has 8 primitive data types; char, boolean, byte, short, int, long, float, and double. For this exercise, we'll work with the primitives used to hold integer values (byte, short, int, and long):
+
+* A byte is an 8-bit signed integer. <br>
+* A short is a 16-bit signed integer. <br>
+* An int is a 32-bit signed integer. <br>
+* A long is a 64-bit signed integer. <br>
+
 ## Creating (Instantiating) object
 * The following code creates three different types of Java objects: <br>
         
