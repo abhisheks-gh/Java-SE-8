@@ -151,6 +151,13 @@ Java has 8 primitive data types; char, boolean, byte, short, int, long, float, a
 * An int is a 32-bit signed integer. <br>
 * A long is a 64-bit signed integer. <br>
 
+## Default Values
+It's not always necessary to assign a value when a field is declared. Fields that are declared but not initialized will be set to a reasonable default by the compiler. Generally speaking, this default will be zero or null, depending on the data type. Relying on such default values, however, is generally considered bad programming style.
+
+The following chart summarizes the default values for the above data types. <br><br>
+![image](https://user-images.githubusercontent.com/95921032/167284114-b137b1f3-0cf2-41fa-838c-241468c1099d.png) <br>
+
+
 ## Creating (Instantiating) object
 * The following code creates three different types of Java objects: <br>
         
