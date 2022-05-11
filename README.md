@@ -193,4 +193,3 @@ understand when the object is actually created.
             Customer c = new Customer("CID88374");
         * Depending on other code in our application, the old object that our 
         reference was pointing to may be destroyed.
- 
