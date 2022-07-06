@@ -156,7 +156,14 @@ It's not always necessary to assign a value when a field is declared. Fields tha
 
 The following chart summarizes the default values for the above data types. <br><br>
 ![image](https://user-images.githubusercontent.com/95921032/167284114-b137b1f3-0cf2-41fa-838c-241468c1099d.png) <br><br>
-* *Only instance variable and static variables have default values. Any variables declared in a method must be explicitly initialized before they are used.*
+* *Only instance variable and static variables have default values. Any variables declared in a method must be explicitly initialized before they are used.*<br><br>
+                        public class Car {<br>
+                        String color; // Legal - Default value is NULL<br>
+                        public void printVin() {<br>
+                        int vin;<br>
+                        System.out.println(vin); // COMPILER ERROR<br>
+                        }<br>
+                        }<br>
 
 
 ## Creating (Instantiating) object
