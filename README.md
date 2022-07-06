@@ -155,7 +155,8 @@ Java has 8 primitive data types; char, boolean, byte, short, int, long, float, a
 It's not always necessary to assign a value when a field is declared. Fields that are declared but not initialized will be set to a reasonable default by the compiler. Generally speaking, this default will be zero or null, depending on the data type. Relying on such default values, however, is generally considered bad programming style.
 
 The following chart summarizes the default values for the above data types. <br><br>
-![image](https://user-images.githubusercontent.com/95921032/167284114-b137b1f3-0cf2-41fa-838c-241468c1099d.png) <br>
+![image](https://user-images.githubusercontent.com/95921032/167284114-b137b1f3-0cf2-41fa-838c-241468c1099d.png) <br><br>
+* *Only instance variable and static variables have default values. Any variables declared in a method must be explicitly initialized before they are used.*
 
 
 ## Creating (Instantiating) object
@@ -193,6 +194,3 @@ understand when the object is actually created.
             Customer c = new Customer("CID88374");
         * Depending on other code in our application, the old object that our 
         reference was pointing to may be destroyed.
-
-## Default Values
-Only instance variable and static variables have default values. Any variables declared in a method must be explicitly initialized before they are used.
