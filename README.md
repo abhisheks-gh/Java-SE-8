@@ -202,4 +202,7 @@ understand when the object is actually created.
         * Depending on other code in our application, the old object that our 
         reference was pointing to may be destroyed.
 ## Default Constructors
-* *For every class, Java provides a default constructor. But, if we create our own constructor for that class then that default constructor is no longer there. So, if someone calls that default constructor anymore in the program (after the creation of our new constructor), the whole code for that particular class will break at the point where the default constructor is called & the program will not even compile.*
+* *For every class, Java provides a default constructor. But, if we create our own constructor for that class then that default constructor is no longer there. So, if someone calls that default constructor anymore in the program (after the creation of our new constructor), the whole code for that particular class will break at the point where the default constructor is called & the program will not even compile.*<br>
+
+## Default vs. "No-Arg" Constructor
+* A "no-arg" constructor is one that lists no parameters (it takes no arguments).  A "default" constructor is a "no-arg" constructor that is created by the compiler, in the event that you don't explicitly create one yourself.
