@@ -225,3 +225,6 @@ Lets consider <br>
     * We don't have to create an object just to be able to access class variables.
 
 2) Static methods provide functionality without the need for an object / instance.
+   * For example, mathematical formulas are great reasons to have static methods.
+   * Should you have to create an instance of some object to compute sine, cosine, or tangent?
+   * Examine the Math class (java.lang.Math) to see some excellent use of static methods.
