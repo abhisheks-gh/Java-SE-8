@@ -26,13 +26,32 @@ class Car {
 
     String getDescription() {
         String desc = "This is a " + color + " " + type;
+        // Using 'this' keyword, we can bypass searching for 'color' in the frame & go directly to the
+        // object in the heap
+
+        // For example, this.color will bypass the step of looking for the 'color' object in the frame & directly
         return desc;
     }
 
     // Customize Frame: newColor="blue"  newType="convertible"
-    void customize(String newColor, String newType) {
-        color = newColor;
-        type = newType + " " + type;
+    //  void customize(String newColor, String newType) {
+    //      color = newColor;
+    //      type = newType + " " + type;
+    //      System.out.println(getDescription());
+    //  }
+
+    void customize(String color, String type) {
+        // Both 'color' on LHS & RHS are local variables on frame according to below expression
+        // color = color;      // Illegal
+
+        // 'this' means bypass the local variable (color) and go right to the 'color' object of Car class
+        this.color = color;
+
+        // Both 'type' on LHS & RHS are local variables on frame according to below expression
+        // type = type + " " + type;
+        // 'this' means bypass the local variable (type) and go right to the 'type' object of Car class
+        this.type = type + " " + this.type;
+
         System.out.println(getDescription());
     }
 
