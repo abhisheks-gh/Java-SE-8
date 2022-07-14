@@ -256,3 +256,10 @@ See the "Exception Handling" section for more details on exceptions.<br>
 # Static vs Regular Initialization Block
 * Static initialization block is executed only once (when the class is loaded by JVM) 
   whereas the regular initialization blocks are executed every time a object is initialized.
+* A static block just like an static method can only load static variables & methods.
+
+# Rules for Constructor chaining    
+* *this()* is used for constructor chaining.
+* Parameters passed inside 'this()' decides to which constructor call should be generated.
+* Need to be done in first line of constructor.
+* Can't place it inside a method.
