@@ -22,6 +22,17 @@ class Car {
         setCarCount(3);        // legal as it's a static method
     }
 
+    String getDescription() {
+        String desc = "This is a " + color + " " + type;
+        return desc;
+    }
+
+    void customize(String newColor, String newType) {
+        color = newColor;
+        type = newType;
+        System.out.println(getDescription());
+    }
+
     // 'static' is a modifier that states that variable is tied to the class itself.
     // 'carCount' is created an initialized not when the object is instantiated but when the class is first
     // loaded in JVM by the class loader! (because it's associated with the class, not object)
