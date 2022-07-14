@@ -232,7 +232,7 @@ Lets consider <br>
 # Static Reference Variables and null
 If the reference variable you are working with has a null value (meaning it is not referring to an object), it's in a dangerous state.  Specifically, if you access an instance member with it, you will see the dreaded "NullPointerException."  This is an exception created by the JVM and unless special exception handling code is written, will result in your program quitting prematurely.
 
-For example, the following code will result in a NullPointerException:
+For example, the following code will result in a **NullPointerException** :
 
     public static void main(String[] args) { 
     String s = null;
