@@ -13,10 +13,23 @@ class Car {
     String color;
     String type;
     int serialNumber;
+
+    // static initialization block
+    // static initialization block just like static methods can only access static variables & methods.
+    // It will be executed only once (when the class will be loaded)
+    static {
+        // color = "Green";    // Illegal
+        setCarCount(3);        // legal as it's a static method
+    }
+
     // 'static' is a modifier that states that variable is tied to the class itself.
     // 'carCount' is created an initialized not when the object is instantiated but when the class is first
     // loaded in JVM by the class loader! (because it's associated with the class, not object)
     static int carCount = 1;
+
+    public static void setCarCount(int c) {
+        carCount = c;
+    }
 
     static void resetCarCount() {
         carCount = 0;
