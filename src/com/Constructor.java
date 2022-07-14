@@ -72,12 +72,20 @@ class Car {
     Car() {
         carCount++;
         serialNumber = carCount;
+
+        // Constructor chaining
+        // this("green", "convertible");
     }
 
-    Car(String c, String t) {
-        color = c;
-        type = t;
-        carCount++;
-        serialNumber = carCount;
+    Car(String color, String type) {
+        // Car(); Illegal syntax for Constructor chaining
+        this();     // Constructor chaining
+
+        // 'this.color' is referring to the instance variable
+        // 'color' is referring to the local variable
+        this.color = color;
+        // this();      // Illegal constructor chaining (Need to be done in the first line)
+        this.type = type;
+
     }
 }
