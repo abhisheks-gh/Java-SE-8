@@ -22,14 +22,17 @@ class Car {
         setCarCount(3);        // legal as it's a static method
     }
 
+    // When this will be called, a frame will be added to stack that's going to have a variable 'desc'
+
     String getDescription() {
         String desc = "This is a " + color + " " + type;
         return desc;
     }
 
+    // Customize Frame: newColor="blue"  newType="convertible"
     void customize(String newColor, String newType) {
         color = newColor;
-        type = newType;
+        type = newType + " " + type;
         System.out.println(getDescription());
     }
 
