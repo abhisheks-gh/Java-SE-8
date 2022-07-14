@@ -252,3 +252,7 @@ I want to stress, while the preceding code won't throw a NullPointerException, y
     double result = Math.floor(28.15);   
     }
 See the "Exception Handling" section for more details on exceptions.<br>
+
+# Static vs Regular Initialization Block
+* Static initialization block is executed only once (when the class is loaded by JVM) 
+  whereas the regular initialization blocks are executed every time a object is initialized.
