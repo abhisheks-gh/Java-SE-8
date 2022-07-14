@@ -258,6 +258,10 @@ See the "Exception Handling" section for more details on exceptions.<br>
   whereas the regular initialization blocks are executed every time a object is initialized.
 * A static block just like an static method can only load static variables & methods.
 
+# 'this' keyword
+* 'this' keyword is used to bypass the local variable (searching of value in local frame on stack) and
+  directly go to the object associated with it.
+
 # Rules for Constructor chaining    
 * *this()* is used for constructor chaining.
 * Parameters passed inside 'this()' decides to which constructor call should be generated.
