@@ -227,4 +227,30 @@ Lets consider <br>
 2) Static methods provide functionality without the need for an object / instance.
    * For example, mathematical formulas are great reasons to have static methods.
    * Should you have to create an instance of some object to compute sine, cosine, or tangent?
-   * Examine the Math class (java.lang.Math) to see some excellent use of static methods.
+   * Examine the Math class (java.lang.Math) to see some excellent use of static methods.<br>
+
+# Static Reference Variables and null
+If the reference variable you are working with has a null value (meaning it is not referring to an object), it's in a dangerous state.  Specifically, if you access an instance member with it, you will see the dreaded "NullPointerException."  This is an exception created by the JVM and unless special exception handling code is written, will result in your program quitting prematurely.
+
+For example, the following code will result in a NullPointerException:
+
+public static void main(String[] args) { <br>
+String s = null; <br>
+s = s.toUpperCase(); // Oops! s is null!   <br>
+} <br>
+<br>
+Static members are different.  While you shouldn't write sloppy/confusing code like this, you should know (especially for the exam) that accessing static members with a null Class reference will not throw a NullPointerException.  For example, the java.lang.Math class has a static method called floor:   <br>
+<br>
+public static void main(String[] args) {   <br>
+Math m = null;  <br>
+double result = m.floor(28.15); // Confusing code, but it works.
+}
+<br>
+<br>
+I want to stress, while the preceding code won't throw a NullPointerException, you shouldn't write code like that. It is much clearer to use the class name:
+
+public static void main(String[] args) {   <br>
+double result = Math.floor(28.15);   <br>
+}   <br>
+<br>
+See the "Exception Handling" section for more details on exceptions.    <br>
