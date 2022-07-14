@@ -234,23 +234,21 @@ If the reference variable you are working with has a null value (meaning it is n
 
 For example, the following code will result in a NullPointerException:
 
-public static void main(String[] args) { <br>
-String s = null; <br>
-s = s.toUpperCase(); // Oops! s is null!   <br>
-} <br>
+    public static void main(String[] args) { 
+    String s = null;
+    s = s.toUpperCase(); // Oops! s is null! 
+    }
 <br>
-Static members are different.  While you shouldn't write sloppy/confusing code like this, you should know (especially for the exam) that accessing static members with a null Class reference will not throw a NullPointerException.  For example, the java.lang.Math class has a static method called floor:   <br>
-<br>
-public static void main(String[] args) {   <br>
-Math m = null;  <br>
-double result = m.floor(28.15); // Confusing code, but it works.
-}
-<br>
+Static members are different.  While you shouldn't write sloppy/confusing code like this, you should know (especially for the exam) that accessing static members with a null Class reference will not throw a NullPointerException.  For example, the java.lang.Math class has a static method called floor:   <br> 
+    
+    public static void main(String[] args) {   
+    Math m = null;  
+    double result = m.floor(28.15); // Confusing code, but it works.
+    }
 <br>
 I want to stress, while the preceding code won't throw a NullPointerException, you shouldn't write code like that. It is much clearer to use the class name:
 
-public static void main(String[] args) {   <br>
-double result = Math.floor(28.15);   <br>
-}   <br>
-<br>
-See the "Exception Handling" section for more details on exceptions.    <br>
+    public static void main(String[] args) {   
+    double result = Math.floor(28.15);   
+    }
+See the "Exception Handling" section for more details on exceptions.<br>
