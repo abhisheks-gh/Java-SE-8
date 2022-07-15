@@ -292,3 +292,4 @@ The java runtime environment manages memory for us! <br>
 1) The package that you are currently in
 2) The java.lang package <br>
     The java.lang has classes that are fundamental to nearly every program you write. <br>
+    For example, ***System***, ***String***, and ***Integer***, etc. are all part of java.lang package.
