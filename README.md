@@ -267,3 +267,18 @@ See the "Exception Handling" section for more details on exceptions.<br>
 * Parameters passed inside 'this()' decides to which constructor call should be generated.
 * Need to be done in first line of constructor.
 * Can't place it inside a method.
+
+# Automatic Garbage Collection
+The java runtime environment manages memory for us! <br>
+* We never have to destroy an object explicitly or manage the memory it uses.
+* The java runtime environment deletes objects when it determines that they are no longer being used.
+  This process is known as ***garbage collection***.
+* The java runtime environment's garbage collector periodically searches memory for "free" (unreferenced) objects 
+  that are no longer needed.
+* When it finds one, it removes it from the heap.
+* ***Garbage Collection Command*** <br>
+  Used to give hint to Garbage Collector that it should run.<br>
+  But, it's just a hint or suggestion and garbage collector choose to ignore it if it decides that now it's
+  not a optimal time to run. <br>
+          
+      System.gc();
