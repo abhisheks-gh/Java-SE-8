@@ -287,3 +287,8 @@ The java runtime environment manages memory for us! <br>
 * In general, a Java memory leak happens when an application unintentionally (due to logical errors in code) holds
   on to object references that are no longer required. These unintentional object references prevent the built-in
   Java garbage collection mechanism from freeing up the memory consumed by these objects.
+
+# Default Packages in a Java Application
+1) The package that you are currently in
+2) The java.lang package <br>
+    The java.lang has classes that are fundamental to nearly every program you write. <br>
