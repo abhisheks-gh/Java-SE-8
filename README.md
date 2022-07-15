@@ -292,4 +292,75 @@ The java runtime environment manages memory for us! <br>
 1) The package that you are currently in
 2) The java.lang package <br>
     The java.lang has classes that are fundamental to nearly every program you write. <br>
-    For example, ***System***, ***String***, and ***Integer***, etc. are all part of java.lang package.
+    For example, ***System***, ***String***, and ***Integer***, etc. are all part of java.lang package.<br>
+
+# Classpath
+* A classpath is a system variable that allows you to tell the compiler and class loader where you store your files
+  (the bytecode and other application files).
+* A classpath can contain multiple directories, JAR files, or zip files.
+* Separate files in the classpath with the correct operating system path separator(e.g., semicolons for Windows,
+  for *nix). <br>
+* When you compile, you can also explicitly designate a classpath for the compiler by including the classpath option.<br>
+
+            javac -classpath c:/temp/myclasses;. SomeClass.java
+* Although, it is possible to set the "classpath" environment variable, it is not recommended
+  * Most projects will have unique classpath locations and if you don't change that, you might be looking for the code 
+    in an outdated directory
+  
+# More on classpath
+A classpath says: "here is a list of root/top level folders where code may be found."  You don't have to list every single directory that has code... just the root folder(s) the compiler & JVM should start their search from.  All of the subfolders are determined by package & import statements in the class.
+
+For example, imagine that we have code in two different directories
+
+    c:\src\com\intertech\transport\Truck.class
+
+    c:\libraries\com\intertech\util\VINFormatter.class
+
+The root code folders are: <br> 
+             
+    c:\src and c:\libraries
+
+Each class would list the subdirectories they live in, via their package statements (note that the package statement is relative from the root code folder... in other words, you don't write "src" or "libraries" as part of the package statement):
+
+    package com.intertech.transport;   
+    public class Truck {        
+    }   
+
+and <br>
+
+    package com.intertech.util; 
+    public class VINFormatter { 
+    }   
+Now, let's say we want to compile a class in another root folder: <br>
+
+    c:\myapp\com\intertech\inventory\InventoryManager.java
+<br>
+
+    package com.intertech.inventory;    
+    import com.intertech.transport.Truck;   
+    import com.intertech.util.VINFormatter; 
+    public class InventoryManager { 
+    private Truck truck;    
+    private VINFormatter formatter; 
+    // ... more code    
+    public static void main(String[] args) { //... }    
+    }   
+If we navigated to the <br>
+
+    c:\myapp directory and just wrote
+
+    javac com\intertech\inventory\InventoryManager.java
+
+or
+
+    java com.intertech.inventory.InventoryManager
+
+...the compiler and JVM, respectively, would try to find Truck in c:\myapp\com\intertech\transport and VINFormatter in c:\myapp\com\intertech\util... which are the wrong directories.
+
+So instead, we use the following compile command w/ classpath to let the compiler know it should search for the classes in different root folders: javac -classpath c:\src;\c:\libraries;. com\intertech\inventory\InventoryManager.java  (the "." means the current directory is also a root folder).
+
+... and we'd run the class with: <br>
+
+    java -classpath c:\src;\c:\libraries;. com.intertech.inventory.InventoryManager
+
+This classpath, combined with the package/import statements, are used by the compiler AND the JVM at runtime to find a given class.
