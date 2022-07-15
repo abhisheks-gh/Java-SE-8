@@ -282,3 +282,8 @@ The java runtime environment manages memory for us! <br>
   not a optimal time to run. <br>
           
       System.gc();
+
+# Memory Leaks
+* In general, a Java memory leak happens when an application unintentionally (due to logical errors in code) holds
+  on to object references that are no longer required. These unintentional object references prevent the built-in
+  Java garbage collection mechanism from freeing up the memory consumed by these objects.
