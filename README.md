@@ -364,3 +364,7 @@ So instead, we use the following compile command w/ classpath to let the compile
     java -classpath c:\src;\c:\libraries;. com.intertech.inventory.InventoryManager
 
 This classpath, combined with the package/import statements, are used by the compiler AND the JVM at runtime to find a given class.
+
+# Rules for BigInteger and BigDecimal (java.math)
+* BigInteger and BigDecimal can't use operators (like +, -, *, /) as they are objects not primitives.
+* So, instead of these operators we use methods that are present to perform the calculations.
