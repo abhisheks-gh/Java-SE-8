@@ -368,3 +368,11 @@ This classpath, combined with the package/import statements, are used by the com
 # Rules for BigInteger and BigDecimal (java.math)
 * BigInteger and BigDecimal can't use operators (like +, -, *, /) as they are objects not primitives.
 * So, instead of these operators we use methods that are present to perform the calculations.
+
+# StringBuilder and StringBuffer Classes
+* Strings in Java are **MUTABLE** i.e. every time we modify the value of string, the modified value is stored in a new string.
+* Java developers are encouraged to use  **StringBuilder** and **StringBuffer** classes when an application needs to
+  manipulate a lot of strings.
+* **StringBuilder** and **StringBuffer** (both in java.lang) provide a mutable sequence of characters but without the 
+  fancy string literals and operators.
+* **StringBuffer** is thread-safe whereas **StringBuilder** is not thread-safe.
