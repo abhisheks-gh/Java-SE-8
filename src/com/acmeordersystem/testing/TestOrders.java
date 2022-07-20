@@ -15,6 +15,10 @@ public class TestOrders {
 		MyDate date2 = new MyDate(4,10,2008);
 		Order balloons = new Order(date2, 1000.00, "Bugs Bunny", "Balloon", 125);
 
+		// MyDate date3 = new MyDate(5, 20, 2008);
+		// Order anotherAnvil = new Order(date3, 200, "Road Runner");
+		// System.out.println(anotherAnvil);
+
 		System.out.println(anvil);
 		System.out.println(balloons);
 
@@ -28,9 +32,8 @@ public class TestOrders {
 		anvil.computeTax();
 		balloons.computeTax();
 
-		//	MyDate date3 = new MyDate(5, 20, 2008);
-		//	Order anotherAnvil = new Order(date3, 200, "Road Runner");
-		//	System.out.println(anotherAnvil);
+		System.out.println("The total bill for: " + anvil + " is " + anvil.computeTotal());
+		System.out.println("The total bill for: " + balloons + " is " + balloons.computeTotal());
 
 	}
 
