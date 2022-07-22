@@ -7,24 +7,83 @@ package com.acmeordersystem.utils;
   */
 
 public class MyDate {
-    public int day;
-    public int month;
-    public static int year;
-    // No-args constructor so that the default constructor of the class can be used.
+    private int day;
+    private int month;
+    private static int year;
+    private boolean leapYear = true;
+
+    // getters
+    public int getDay() { return day; }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public boolean isLeapYear() {
+        return leapYear;
+    }
+
+    // setters
+    public void setDay(int day) {
+        if (valid(day, this.month, MyDate.year)) {
+            this.day = day;
+        }
+    }
+
+    public void setMonth(int month) {
+        if (valid(this.day, month, MyDate.year)) {
+            this.month = month;
+        }
+    }
+
+    public void setYear(int year) {
+        if (valid(this.day, this.month, year)) {
+            MyDate.year = year;
+        }
+    }
+
+    public void setLeapYear(boolean leapYear) {
+        this.leapYear = leapYear;
+    }
+
+    /** No-args constructor so that the default constructor of the class can be used. */
     public MyDate() {}
+
     // Constructor
     public MyDate(int m, int d, int y) {
         setDate(m, d, y);
     }
+
     // Created object of MyDate class
     MyDate myDate;
 
-    // Displays date
+
+    /** Checks whether a date is valid or not. */
+    private boolean valid(int day, int month, int year) {
+        boolean isValid = true;
+        if (day > 31 || day < 1 || month > 12 || month < 1) {
+            isValid = false;
+        } else {
+            switch (month) {
+                case 4: case 6: case 9: case 11:
+                    isValid = (day <= 30); break;
+                case 2:
+                    isValid  = (day <= 28 || (day == 29 && year % 4 == 0));
+            }
+        }
+        return isValid;
+    }
+
+    /** Displays date */
     public String toString() {
         return month + "/" + day + "/" + year;
     }
 
-    // Resets date
+    /** Resets date */
     public void setDate(int m, int d, int y) {
         month = m;
         day = d;
@@ -42,12 +101,17 @@ public class MyDate {
            unless the year is divisible by 400. Then it is a leap year.
          */
 
+        MyDate leapYear = new MyDate();
+
         for (year = 1752; year <= 2020; year++) {
             // Leap years
-            if (year % 4 == 0 && year % 100 != 0)
+            if (year % 4 == 0 && year % 100 != 0) {
                 System.out.println("The year " + year + " is a leap year");
-            else if (year % 4 == 0 && year % 100 == 0 && year % 400 == 0) {
+
+            } else if (year % 4 == 0 && year % 100 == 0 && year % 400 == 0) {
                 System.out.println("The year " + year + " is a leap year");
+            } else {
+                boolean leapYearResult = !(leapYear.isLeapYear());      // ** Need to be updated **
             }
         }
     }
