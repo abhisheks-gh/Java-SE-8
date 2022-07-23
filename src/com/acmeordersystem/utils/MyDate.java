@@ -54,10 +54,15 @@ public class MyDate {
         this.leapYear = leapYear;
     }
 
-    /** No-args constructor so that the default constructor of the class can be used. */
-    public MyDate() {}
+     /**
+     * The default constructor, if used as it stands, could result in a date being
+     * created with 0 as the day, month, or year.
 
-    // Constructor
+     * No-args constructor so that the default constructor of the class can be used. */
+    public MyDate() {
+        this((byte)1, (byte)1, 1990); }  // Chained Constructors (sets date to a default date)
+
+    /** MyDate constructor */
     public MyDate(byte m, byte d, int y) {
         setDate(m, d, y);
     }
@@ -70,7 +75,7 @@ public class MyDate {
     private boolean valid(int day, int month, int year) {
         boolean isValid = true;
         if (day > 31 || day < 1 || month > 12 || month < 1) {
-            System.out.println("\"Attempting to create a non-valid date \" \n" + "+ month + \"/\" + day + \"/\" + year");
+            System.out.println("\"Attempting to create a non-valid date: "  + month + "/" + day + "/" + year);
             isValid = false;
         } else {
             switch (month) {
@@ -93,6 +98,7 @@ public class MyDate {
 
     /** Resets 'date' */
     public void setDate(byte m, byte d, int y) {
+        if (valid(m, d, y))
         month = m;
         day = d;
         year = y;
@@ -119,7 +125,7 @@ public class MyDate {
             } else if (year % 4 == 0 && year % 100 == 0 && year % 400 == 0) {
                 System.out.println("The year " + year + " is a leap year");
             } else {
-                boolean leapYearResult = !(leapYear.isLeapYear());      // ** Need to be updated **
+                boolean leapYearResult = !(leapYear.isLeapYear());
             }
         }
     }
