@@ -6,7 +6,7 @@ public class PassByExperiment {
 
     public static void main(String[] args) {
         // Created MyDate object
-        MyDate date = new MyDate(1, 20, 2008);
+        MyDate date = new MyDate((byte)1, (byte)20, 2008);
 
         System.out.println("Before passing an object " + date); // 1/20/2008
         passObject(date);
