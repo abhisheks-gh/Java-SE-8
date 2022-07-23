@@ -7,8 +7,8 @@ package com.acmeordersystem.utils;
   */
 
 public class MyDate {
-    private int day;
-    private int month;
+    private byte day;
+    private byte month;
     private static int year;
     private boolean leapYear = true;
 
@@ -28,24 +28,28 @@ public class MyDate {
     }
 
     // setters
+    /** Sets day and also check if day is ok. */
     public void setDay(int day) {
         if (valid(day, this.month, MyDate.year)) {
-            this.day = day;
+            this.day = (byte)day;
         }
     }
 
+    /** Sets month and also check if month is ok. */
     public void setMonth(int month) {
         if (valid(this.day, month, MyDate.year)) {
-            this.month = month;
+            this.month = (byte)month;
         }
     }
 
+    /** Sets year and also check if year is ok. */
     public void setYear(int year) {
         if (valid(this.day, this.month, year)) {
             MyDate.year = year;
         }
     }
 
+    /** Sets boolean value to 'leapYear'. */
     public void setLeapYear(boolean leapYear) {
         this.leapYear = leapYear;
     }
@@ -54,7 +58,7 @@ public class MyDate {
     public MyDate() {}
 
     // Constructor
-    public MyDate(int m, int d, int y) {
+    public MyDate(byte m, byte d, int y) {
         setDate(m, d, y);
     }
 
@@ -62,7 +66,7 @@ public class MyDate {
     MyDate myDate;
 
 
-    /** Checks whether a date is valid or not. */
+    /** Checks whether a 'date' is valid or not. */
     private boolean valid(int day, int month, int year) {
         boolean isValid = true;
         if (day > 31 || day < 1 || month > 12 || month < 1) {
@@ -78,13 +82,13 @@ public class MyDate {
         return isValid;
     }
 
-    /** Displays date */
+    /** Displays 'date' */
     public String toString() {
         return month + "/" + day + "/" + year;
     }
 
-    /** Resets date */
-    public void setDate(int m, int d, int y) {
+    /** Resets 'date' */
+    public void setDate(byte m, byte d, int y) {
         month = m;
         day = d;
         year = y;
@@ -114,6 +118,21 @@ public class MyDate {
                 boolean leapYearResult = !(leapYear.isLeapYear());      // ** Need to be updated **
             }
         }
+    }
+
+    /** Sets day to 'day' to the next 'day' i.e. "tomorrow". */
+    public void tomorrow() {
+         if (valid(day + 1, month, year)) {
+             day++;
+         } else if (valid(day, month + 1, year)) {
+             day = 1;
+             month++;
+         }
+         else {
+             day = 1;
+             month = 1;
+             year++;
+         }
     }
 
 }
