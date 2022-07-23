@@ -37,11 +37,11 @@ public class Order {
 	}
 
 	public Order(MyDate d, double amt, String c, String p, int q){
-		orderDate=d;
-		orderAmount=amt;
-		customer=c;
-		product=p;
-		quantity=q;
+		orderDate = d;
+		orderAmount = amt;
+		customer = c;
+		product = p;
+		quantity = q;
 	}
 
 	public Order(MyDate d, double amt, String c) {
