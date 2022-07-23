@@ -70,10 +70,14 @@ public class MyDate {
     private boolean valid(int day, int month, int year) {
         boolean isValid = true;
         if (day > 31 || day < 1 || month > 12 || month < 1) {
+            System.out.println("\"Attempting to create a non-valid date \" \n" + "+ month + \"/\" + day + \"/\" + year");
             isValid = false;
         } else {
             switch (month) {
-                case 4: case 6: case 9: case 11:
+                case 4:
+                case 6:
+                case 9:
+                case 11:
                     isValid = (day <= 30); break;
                 case 2:
                     isValid  = (day <= 28 || (day == 29 && year % 4 == 0));
@@ -97,12 +101,12 @@ public class MyDate {
     /** Checks which years are leap years */
     public static void leapYears() {
         /**
-        Some simple calculators use a basic
-        loop. Other more accurate calculators use a loop and modulus operator,
-        shown in the formula below.
-         Every year that is divisible by four is a leap year.
-         Of those years, if it can be divided by 100, it is NOT a leap year,
-           unless the year is divisible by 400. Then it is a leap year.
+         Some simple calculators use a basic
+         loop. Other more accurate calculators use a loop and modulus operator,
+         shown in the formula below.
+          Every year that is divisible by four is a leap year.
+          Of those years, if it can be divided by 100, it is NOT a leap year,
+         unless the year is divisible by 400. Then it is a leap year.
          */
 
         MyDate leapYear = new MyDate();
@@ -122,17 +126,17 @@ public class MyDate {
 
     /** Sets day to 'day' to the next 'day' i.e. "tomorrow". */
     public void tomorrow() {
-         if (valid(day + 1, month, year)) {
-             day++;
-         } else if (valid(day, month + 1, year)) {
-             day = 1;
-             month++;
-         }
-         else {
-             day = 1;
-             month = 1;
-             year++;
-         }
+        if (valid(day + 1, month, year)) {
+            day++;
+        } else if (valid(day, month + 1, year)) {
+            day = 1;
+            month++;
+        }
+        else {
+            day = 1;
+            month = 1;
+            year++;
+        }
     }
 
 }
