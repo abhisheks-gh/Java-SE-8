@@ -432,3 +432,31 @@ The most surprising rule, however, is that when accessing protected state or beh
             m.doSomething(); // ILLEGAL
       }
     }
+<br>
+# Super and the First Statement Rule
+I mentioned that when chaining constructors, the call to the super constructor must be the first statement in the constructor.  And that's true.  Assuming the Person class contains a no-arg constructor, the following constructor is valid: <br>
+
+    public Employee() {
+        super();
+        deptId = 281;
+    }
+...whereas this one is not: <br>
+
+    public Employee() {
+        deptId = 281;
+        super();
+    }
+I want to clarify that using super with the dot operator, to invoke a super type's method (other than a constructor) or access its state, is NOT bound by the first statement rule. <br>
+
+Both of these examples are valid: <br>
+
+    public void driveLikeDad() {
+        super.drive();
+        doSomethingElse();
+    }
+and...  <br>
+
+    public void driveLikeDad() {
+        doSomethingElse();
+        super.drive();
+    }
