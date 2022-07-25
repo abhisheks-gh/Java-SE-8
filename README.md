@@ -376,3 +376,59 @@ This classpath, combined with the package/import statements, are used by the com
 * **StringBuilder** and **StringBuffer** (both in java.lang) provide a mutable sequence of characters but without the 
   fancy string literals and operators.
 * **StringBuffer** is thread-safe whereas **StringBuilder** is not thread-safe.
+
+# "Protected" Keyword
+Protected access means that the state or behavior is available to code in the same class, same package, and to subtypes in any other package.  Let's look at some examples that use the following class: <br>
+
+    package com.intertech.examples;
+    public class Person {
+        protected void doSomething() {
+            System.out.println("Doing something");
+        }
+    }
+In this first example, calling doSomething() is legal, because it is being invoked from a class in the same package. <br>
+
+    package com.intertech.examples; 
+    public class PersonTester {
+        public static void main(String[] args) {
+            Person p = new Person();
+            p.doSomething();
+       }
+    }
+Although this next example defines a class in a different package than the one which contains Person, calling doSomething() is legal because Employee extends Person <br>
+
+    package com.something.else;
+    import com.intertech.examples.Person;
+    public class Employee extends Person {
+        public void testingProtectedMethod() {
+            doSomething();
+        }
+    }
+When dealing with code that is in a different package from the one that contains the protected state or behavior, it's not enough for the call to be made with a subtype object. The object must be called within a subtype class.  For example, the following is illegal. Even though the object being used is an Employee (a subtype of Person), the code has been defined in a class that is not a subtype of, nor in the same package, as Person. <br>
+
+    package com.something.else;
+    public class EmployeeTester {
+        public static void main(String[] args) {
+            Employee e = new Employee();
+            e.doSomething() // ILLEGAL
+        }
+    }
+The most surprising rule, however, is that when accessing protected state or behavior from a different package, it can only be accessed with an object reference that is the same type as the class it is defined in.  For example, here we have an Employee class.  The class is defined in a different package from Person, but it is a subtype of Person.  Therefore, the doSomething() method is available to Employee.  It is NOT, however, available for a Person object (where the method is defined!) or a Musician object (another subtype of Person) when they are used in this Employee class: <br>
+
+    package com.something.else;
+    import com.intertech.examples.Person;
+    import com.intertech.examples.Musician; /* Musician extends Person */
+    public class Employee extends Person {
+        public void testingProtectedMethod() {
+            doSomething();  // LEGAL
+        }
+
+        public static void main(String[] args) {
+            Employee e = new Employee();
+            e.doSomething(); // LEGAL
+            Person p = new Person();
+            p.doSomething(); // ILLEGAL
+            Musician m = new Musician();
+            m.doSomething(); // ILLEGAL
+      }
+    }
