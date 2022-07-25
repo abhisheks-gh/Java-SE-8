@@ -432,8 +432,7 @@ The most surprising rule, however, is that when accessing protected state or beh
             m.doSomething(); // ILLEGAL
       }
     }
-<br>
-# Super and the First Statement Rule
+# "super" keyword and First Statement Rule
 I mentioned that when chaining constructors, the call to the super constructor must be the first statement in the constructor.  And that's true.  Assuming the Person class contains a no-arg constructor, the following constructor is valid: <br>
 
     public Employee() {
