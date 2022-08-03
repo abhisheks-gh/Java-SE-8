@@ -193,7 +193,7 @@ Lets consider <br>
             Customer c = new Customer("CID88374");
         * Depending on other code in our application, the old object that our
           reference was pointing to may be destroyed. <br>
-        
+
     * When you create an object with the "new" keyword,
       you are actually calling a method called a constructor.<br>
     * The constructor is responsible for the initialization of an
@@ -201,19 +201,19 @@ Lets consider <br>
     * Constructor methods can only be called during instantiation.<br>
     * All object have at least one constructor but can have as many as they want or need.<br>
     * The benefit of multiple constructor is flexibility.<br>
-      * Depending on what information you have when you create an object, you may have the ability to pass in all,
-        some, or no data.<br>
+        * Depending on what information you have when you create an object, you may have the ability to pass in all,
+          some, or no data.<br>
 
 ## Default Constructors
 * *For every class, Java provides a default constructor. But, if we create our own constructor for that class then that default constructor is no longer there. So, if someone calls that default constructor anymore in the program (after the creation of our new constructor), the whole code for that particular class will break at the point where the default constructor is called & the program will not even compile.*<br>
 
 ## Default vs. "No-Arg" Constructor
 * A "no-arg" constructor is one that lists no parameters (it takes no arguments).  A "default" constructor is a "no-arg" constructor that is created by the compiler, in the event that you don't explicitly create one yourself.
-      
+
 # Creating Object Types
- There are plenty of object types (like String and Point) created in Java and ready for you to use.
- These object types are part of Java API.<br>
- * An object type is called a class.<br>
+There are plenty of object types (like String and Point) created in Java and ready for you to use.
+These object types are part of Java API.<br>
+* An object type is called a class.<br>
 
 # Static methods have two primary purposes:
 1) They are used to access (update or fetch) class variable data.
@@ -225,9 +225,9 @@ Lets consider <br>
     * We don't have to create an object just to be able to access class variables.
 
 2) Static methods provide functionality without the need for an object / instance.
-   * For example, mathematical formulas are great reasons to have static methods.
-   * Should you have to create an instance of some object to compute sine, cosine, or tangent?
-   * Examine the Math class (java.lang.Math) to see some excellent use of static methods.<br>
+    * For example, mathematical formulas are great reasons to have static methods.
+    * Should you have to create an instance of some object to compute sine, cosine, or tangent?
+    * Examine the Math class (java.lang.Math) to see some excellent use of static methods.<br>
 
 # Static Reference Variables and null
 If the reference variable you are working with has a null value (meaning it is not referring to an object), it's in a dangerous state.  Specifically, if you access an instance member with it, you will see the dreaded "NullPointerException."  This is an exception created by the JVM and unless special exception handling code is written, will result in your program quitting prematurely.
@@ -240,7 +240,7 @@ For example, the following code will result in a **NullPointerException** :
     }
 <br>
 Static members are different.  While you shouldn't write sloppy/confusing code like this, you should know (especially for the exam) that accessing static members with a null Class reference will not throw a NullPointerException.  For example, the java.lang.Math class has a static method called floor:   <br> 
-    
+
     public static void main(String[] args) {   
     Math m = null;  
     double result = m.floor(28.15); // Confusing code, but it works.
@@ -254,7 +254,7 @@ I want to stress, while the preceding code won't throw a NullPointerException, y
 See the "Exception Handling" section for more details on exceptions.<br>
 
 # Static vs Regular Initialization Block
-* Static initialization block is executed only once (when the class is loaded by JVM) 
+* Static initialization block is executed only once (when the class is loaded by JVM)
   whereas the regular initialization blocks are executed every time a object is initialized.
 * A static block just like an static method can only load static variables & methods.
 
@@ -262,7 +262,7 @@ See the "Exception Handling" section for more details on exceptions.<br>
 * 'this' keyword is used to bypass the local variable (searching of value in local frame on stack) and
   directly go to the object associated with it.
 
-# Rules for Constructor chaining    
+# Rules for Constructor chaining
 * *this()* is used for constructor chaining.
 * Parameters passed inside 'this()' decides to which constructor call should be generated.
 * Need to be done in first line of constructor.
@@ -273,14 +273,14 @@ The java runtime environment manages memory for us! <br>
 * We never have to destroy an object explicitly or manage the memory it uses.
 * The java runtime environment deletes objects when it determines that they are no longer being used.
   This process is known as ***garbage collection***.
-* The java runtime environment's garbage collector periodically searches memory for "free" (unreferenced) objects 
+* The java runtime environment's garbage collector periodically searches memory for "free" (unreferenced) objects
   that are no longer needed.
 * When it finds one, it removes it from the heap.
 * ***Garbage Collection Command*** <br>
   Used to give hint to Garbage Collector that it should run.<br>
   But, it's just a hint or suggestion and garbage collector choose to ignore it if it decides that now it's
   not a optimal time to run. <br>
-          
+
       System.gc();
 
 # Memory Leaks
@@ -291,8 +291,8 @@ The java runtime environment manages memory for us! <br>
 # Default Packages in a Java Application
 1) The package that you are currently in
 2) The java.lang package <br>
-    The java.lang has classes that are fundamental to nearly every program you write. <br>
-    For example, ***System***, ***String***, and ***Integer***, etc. are all part of java.lang package.<br>
+   The java.lang has classes that are fundamental to nearly every program you write. <br>
+   For example, ***System***, ***String***, and ***Integer***, etc. are all part of java.lang package.<br>
 
 # Classpath
 * A classpath is a system variable that allows you to tell the compiler and class loader where you store your files
@@ -304,9 +304,9 @@ The java runtime environment manages memory for us! <br>
 
             javac -classpath c:/temp/myclasses;. SomeClass.java
 * Although, it is possible to set the "classpath" environment variable, it is not recommended
-  * Most projects will have unique classpath locations and if you don't change that, you might be looking for the code 
-    in an outdated directory
-  
+    * Most projects will have unique classpath locations and if you don't change that, you might be looking for the code
+      in an outdated directory
+
 # More on classpath
 A classpath says: "here is a list of root/top level folders where code may be found."  You don't have to list every single directory that has code... just the root folder(s) the compiler & JVM should start their search from.  All of the subfolders are determined by package & import statements in the class.
 
@@ -316,8 +316,8 @@ For example, imagine that we have code in two different directories
 
     c:\libraries\com\intertech\util\VINFormatter.class
 
-The root code folders are: <br> 
-             
+The root code folders are: <br>
+
     c:\src and c:\libraries
 
 Each class would list the subdirectories they live in, via their package statements (note that the package statement is relative from the root code folder... in other words, you don't write "src" or "libraries" as part of the package statement):
@@ -373,7 +373,7 @@ This classpath, combined with the package/import statements, are used by the com
 * Strings in Java are **MUTABLE** i.e. every time we modify the value of string, the modified value is stored in a new string.
 * Java developers are encouraged to use  **StringBuilder** and **StringBuffer** classes when an application needs to
   manipulate a lot of strings.
-* **StringBuilder** and **StringBuffer** (both in java.lang) provide a mutable sequence of characters but without the 
+* **StringBuilder** and **StringBuffer** (both in java.lang) provide a mutable sequence of characters but without the
   fancy string literals and operators.
 * **StringBuffer** is thread-safe whereas **StringBuilder** is not thread-safe.
 
@@ -459,3 +459,137 @@ and...  <br>
         doSomethingElse();
         super.drive();
     }
+
+# Class/Object Invocation Order
+When an object in an inheritance chain is instantiated for the first time, this is the order that the code is executed: <br>
+
+All of the static variables are defined in the class (with default values).  For example, the code public static String firstName = "Jason";  would result in the creation of the variable firstName  but in this step, it is assigned the default value of null (rather than the explicit value of "Jason").  This happens for all of the classes in the hierarchy (moving up the inheritance chain). <br>
+All of the static initialization blocks and explicit values assigned to static variables (such as "Jason" above), are executed in the base class, in the order they are written (from top to bottom).  <br>
+All of the static initialization blocks and explicit values assigned to static variables are executed for the immediate child of the base class, in the order they are written (from top to bottom). <br>
+Step 3 is repeated all the way down the object hierarchy until the instantiated object type is reached. <br>
+All of the instance variables are defined with default values, for all of the classes in the hierarchy (moving up the inheritance chain). <br>
+All of the instance initialization blocks and explicit values assigned to instance variables are executed for the base class, in the order they are written (from top to bottom).  <br>
+The constructor for the base class is executed. <br>
+All of the instance initialization blocks and explicit values assigned to instance variables are executed for the immediate child of the base class, in the order they are written (from top to bottom), <br>
+The constructor for the immediate child of the base class is executed. <br>
+Steps 8 - 9 are repeated all the way down the object hierarchy until the instantiated object type is reached. <br>
+
+Note that the first steps that execute "static" code will only happen once during the entire life of the class, and may have been executed before an object has been instantiated (such as when a reference variable is created or a static member is accessed). <br>
+
+Here's an example to illustrate the order class and object instantiation is executed. The following classes are defined in three separate files (and note that their members are organized in a haphazard manner just to make sure you're paying attention!): <br>
+
+Person <br>
+
+    public class Person {
+      {
+        System.out.println("Person: First Instance Initialization Block");
+      }
+      static {
+        System.out.println("Person: First Static Block");
+      }
+      {
+        System.out.println("Person: Second Instance Initialization Block");
+      }
+      static {
+        System.out.println("Person: Second Static Block");
+      }
+      public Person() {
+        System.out.println("Person()");
+      }
+      public void sayHello() {
+        System.out.println("Person: Hello!");
+      }
+    }
+
+Employee 
+
+    public class Employee extends Person {
+    {
+    System.out.println("Employee: First Instance Initialization Block");
+    }
+    static {
+    System.out.println("Employee: First Static Block");
+    }
+    {
+    System.out.println("Employee: Second Instance Initialization Block");
+    }
+    static {
+    System.out.println("Employee: Second Static Block");
+    }
+    public Employee() {
+    System.out.println("Employee()");
+    }
+    }
+
+Instructor 
+
+        public class Instructor extends Employee {
+        {
+        System.out.println("Instructor: First Instance Initialization Block");
+        str1 = "First Instance Initialization String";
+        }
+        static {
+        System.out.println("Instructor: First Static Block");
+        str1 = "First Static Initialization String";
+        }
+        public static String str1 = "Explicit Initialization String";
+        {
+        System.out.println("Instructor: Second Instance Initialization Block");
+        str1 = "Second Instance Initialization String";
+        }
+        static {
+        System.out.println("Instructor: Second Static Block");
+        str1 = "Second Static Initialization String";
+        }
+        public Instructor() {
+        System.out.println("Instructor()");
+        }
+        }
+
+
+The following code...
+
+    Instructor i =  new Instructor();
+    i.sayHello();
+    System.out.println(Instructor.str1);
+
+
+...would generate this output :  <br>
+(assuming the Person, Employee, and Instructor classes have not been previously referenced, otherwise the static blocks wouldn't be executed again) <br>
+
+    Person: First Static Block
+
+    Person: Second Static Block
+
+    Employee: First Static Block
+
+    Employee: Second Static Block
+
+    Instructor: First Static Block
+
+    Instructor: Second Static Block
+
+    Person: First Instance Initialization Block
+
+    Person: Second Instance Initialization Block
+
+    Person()
+
+    Employee: First Instance Initialization Block
+
+    Employee: Second Instance Initialization Block
+
+    Employee()
+
+    Instructor: First Instance Initialization Block
+
+    Instructor: Second Instance Initialization Block
+
+    Instructor()
+
+    Person: Hello!
+
+    Second Instance Initialization String
+
+
+NOTE: If another Instructor object is instantiated, the static blocks would be skipped, since that only happens once during the life of the class. <br>
