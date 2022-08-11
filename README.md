@@ -607,3 +607,28 @@ I want to be clear, however, that "being available to an object" is not the same
     e.setFirstName("Jane"); 
     
 ... is legal because Employee inherits the setFirstName method from Person.  It wasn't declared inside Employee, but it was available to Employee.  So that's why I specifically say that a reference variable is limited to the members that are available to, rather than defined inside, the class itself. <br>
+
+# Remember: All Interface Methods are "public."
+While an IDE or a compiler will complain if you make this mistake, you won't have these tools when taking the exam.  So remember: all interface methods are public, even if they don't use the public keyword. <br><br>
+
+Therefore given the following legal interface:
+
+    public interface Payable {
+        double pay();
+    }
+    
+Unlike interface methods, concrete implementations MUST include the public modifier.  Therefore, the following code will not compile because pay() is missing the "public" modifier. 
+
+    public class Consultant implements Payable {
+        double pay() {
+            return 80_000.0;
+        }
+    }
+    
+The correct code is:
+
+    public class Consultant implements Payable {
+        public double pay() {
+            return 80_000.0;
+        }
+    }
