@@ -48,5 +48,6 @@ public class DateTimeExamples {
         now =  now.minus(period);   p(now);
 
         // Period period1 = Period.between(hireDate, now); p(period1);
+        // Output: P8Y1M       (i.e. Period is 8 Years and 1 Months)
     }
 }
