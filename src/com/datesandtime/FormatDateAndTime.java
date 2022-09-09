@@ -11,7 +11,7 @@ public class FormatDateAndTime {
 
     public static void main(String[] args) {
         LocalDate now = LocalDate.now(); p(now);
-        DateTimFormatter dtf = DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL);
+        DateTimeFormatter dtf = DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL);
         p(now.format(dtf));
     }
 
