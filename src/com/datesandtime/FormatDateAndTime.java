@@ -13,6 +13,10 @@ public class FormatDateAndTime {
         LocalDate now = LocalDate.now(); p(now);
         DateTimeFormatter dtf = DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL);
         p(now.format(dtf));
+
+        DateTimeFormatter patternFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+//        DateTimeFormatter patternFormatter = DateTimeFormatter.ofPattern("dd/MM 'in the year of' yyyy");
+        p(now.format(patternFormatter));
     }
 
 }
