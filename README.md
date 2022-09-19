@@ -501,7 +501,7 @@ Person <br>
       }
     }
 
-Employee 
+Employee
 
     public class Employee extends Person {
     {
@@ -521,7 +521,7 @@ Employee
     }
     }
 
-Instructor 
+Instructor
 
         public class Instructor extends Employee {
         {
@@ -595,17 +595,17 @@ The following code...
 NOTE: If another Instructor object is instantiated, the static blocks would be skipped, since that only happens once during the life of the class. <br>
 
 # Being Available vs. Being Inside
-Throughout this section, I've mentioned that a reference variable may only send messages that are available to its type.  In other words imagine that a Person class has a setFirstName method, and an Employee class has a setSalary method: 
+Throughout this section, I've mentioned that a reference variable may only send messages that are available to its type.  In other words imagine that a Person class has a setFirstName method, and an Employee class has a setSalary method:
 
     Person p = new Employee();
     p.setFirstName("Jane"); // Legal since setFirstName is available to Person
     p.setSalary(80_000);    // Illegal since salary is available to an Employee, not a Person.
-    
+
 I want to be clear, however, that "being available to an object" is not the same as "being declared inside an object."  Let's say we have a subtype of Employee called Instructor.  If we create an Employee reference variable, we can call any member available to Employee - including those members it inherits.  For example:
 
     Employee e = new Instructor();
     e.setFirstName("Jane"); 
-    
+
 ... is legal because Employee inherits the setFirstName method from Person.  It wasn't declared inside Employee, but it was available to Employee.  So that's why I specifically say that a reference variable is limited to the members that are available to, rather than defined inside, the class itself. <br>
 
 # Remember: All Interface Methods are "public."
@@ -616,15 +616,15 @@ Therefore given the following legal interface:
     public interface Payable {
         double pay();
     }
-    
-Unlike interface methods, concrete implementations MUST include the public modifier.  Therefore, the following code will not compile because pay() is missing the "public" modifier. 
+
+Unlike interface methods, concrete implementations MUST include the public modifier.  Therefore, the following code will not compile because pay() is missing the "public" modifier.
 
     public class Consultant implements Payable {
         double pay() {
             return 80_000.0;
         }
     }
-    
+
 The correct code is:
 
     public class Consultant implements Payable {
@@ -632,3 +632,49 @@ The correct code is:
             return 80_000.0;
         }
     }
+
+# Multi-dimensional arrays
+* Balance the Brackets <br>
+  * Make sure both sides are balanced with the same number of square brackets:
+
+    `int[][] credentials = new int[3][2]; // legal 
+     int[][] credentials2 = new int[3]; /* Illegal. Missing the 2nd dimension */`
+
+* Square Bracket Placement <br>
+Just like regular arrays, the square brackets can go to the right of the 
+type, or the right of the identifier:
+
+`int[][] credentials = new int[3][2];`
+or
+
+`int credentials[][] = new int[3][2];`
+
+They can be split up as well (though this is uncommon). For example a 3 
+dimensional array could legally be declared as:
+
+`int[] moreStuff[][] = new int[3][3][2];`
+or
+
+`int[][] moreStuff[] = new int[3][3][2];`
+
+
+Initializing the Final Dimension
+The first dimension must be given a size during its definition. 
+It is legal to initialize the other dimensions after the array has 
+been defined.  For example the code below is legal.
+
+`int[][][] moreStuff = new int[3][3][];` <br>
+`moreStuff[0][2] = new int[2]; // Line A` <br>
+`moreStuff[0][2][0] = 0;` <br>
+`moreStuff[0][2][1] = 1;` <br>
+
+While this is legal, note that Line A is adding a 3rd dimension to only one member of 2nd dimension.
+In other words, if you tried to access another 2nd dimension value and add an int to its 3rd dimension,
+it would throw a NullPointerException at runtime:
+
+`moreStuff[0][1][0] = 0; /* ILLEGAL! Only [0][2] has a third dimension. */` <br>
+There can't be any gaps of size definition between the first dimension and the subsequent dimensions: The following three lines of code are illegal and would not compile:
+
+`int[][][] moreStuff  = new int[3][][3];` <br>
+`int[][][] moreStuff2 = new int[][3][3];` <br>
+`int[][][] moreStuff3 = new int[][][3];` <br>
