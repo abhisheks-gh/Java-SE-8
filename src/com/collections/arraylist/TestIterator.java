@@ -25,12 +25,18 @@ public class TestIterator {
         while(iter.hasNext()) {
             System.out.println(iter.next());
         }
+        System.out.println("----------------------");
         /** A ListIterator is only available for list (not all Collections) */
         ListIterator li = list.listIterator();
+        System.out.println("Now using ListIterator");
+        System.out.println("----------------------");
+
         while(li.hasNext()) {
             System.out.println(li.next());
         }
-        System.out.println("--------------");
+
+        System.out.println("----------------------");
+
         while (li.hasPrevious()) {
             System.out.println(li.previous());
         }
