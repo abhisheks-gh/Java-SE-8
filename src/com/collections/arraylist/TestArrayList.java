@@ -36,6 +36,6 @@ public class TestArrayList {
 
         /** The purpose of clear() is to remove every single element from the list. */
         list.clear();
-        System.out.println(list);
+        System.out.println(list);   // Output: []
     }
 }
