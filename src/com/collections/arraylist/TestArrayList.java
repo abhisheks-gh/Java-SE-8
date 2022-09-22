@@ -2,6 +2,10 @@ package com.collections.arraylist;
 
 import java.util.ArrayList;
 
+/** An ArrayList implements, indirectly, the List and Collection interfaces.
+    By the rules of polymorphism, A reference variable that is an interface
+    type may hold a reference of any class that implements that type. */
+
 public class TestArrayList {
     public static void main(String[] args) {
         // Sets the initial capacity to 4
@@ -12,7 +16,7 @@ public class TestArrayList {
         list.add("World");
         System.out.println(list);   // Output: [Hello, World]
         /** The comma-separated list with [] display is a result of the collection API
-            overriding toString() */
+         overriding toString() */
         // Prints the size of ArrayList
         System.out.println("Current size: " + list.size());
 
@@ -24,11 +28,11 @@ public class TestArrayList {
         // System.out.println(list);    // Output: []  i.e. empty list
 
         /** If we try to remove an object that is not the part of the list, then the
-            program will complete its execution without any errors or exceptions
+         program will complete its execution without any errors or exceptions
          *  The method takes a Collection as an argument. And its purpose is to remove all
-            common elements between the list and the collection.
-            So, when calling it on a collection, it will remove all elements from the passed
-            argument that are also in the collection on which we call removeAll(). */
+         common elements between the list and the collection.
+         So, when calling it on a collection, it will remove all elements from the passed
+         argument that are also in the collection on which we call removeAll(). */
         // list.remove("Nigga");
 
         System.out.println( list.contains("Hello") );   // true
