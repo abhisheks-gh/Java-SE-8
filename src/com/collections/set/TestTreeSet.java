@@ -14,9 +14,12 @@ public class TestTreeSet {
         tree.add(66);
         tree.add(12);
 
+        // When we iterate through them, it's going to come in ascending order
+        /** TreeSets rely on compareTo() method to sort the stored components automatically */
         Iterator iter = tree.iterator();
         while (iter.hasNext()) {
             System.out.println(iter.next() + " ");
         }
+        System.out.println(tree);
     }
 }
